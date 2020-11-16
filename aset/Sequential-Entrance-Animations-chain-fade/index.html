@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery chain-fade Plugin Demos</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/estilos.css">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+	<!-- Chain Fade -->
+	<script type="text/javascript" src="js/chain_fade.js"></script>
+
+</head>
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/animation/Sequential-Entrance-Animations-chain-fade/">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div id="wrapper">
+
+	<div id="inner">
+
+		<header>
+			<h1>jQuery chain-fade Plugin Demos</h1>
+		</header>
+		
+		<div class="listadoOpciones">
+			<!-- Default -->
+			<section>
+
+				<div class="demoContainer">
+					<div class="demo default clearfix">
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>	
+					</div><!-- fin demo -->
+
+					<pre>$('.box').chainFade();</pre>
+
+					<p class="btn">&#9658;</p>
+
+				</div>
+
+			</section>
+
+			<!-- toThe: bottom -->
+			<section>
+
+				<div class="demoContainer">
+					<div class="demo toThebottom clearfix">
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>	
+					</div><!-- fin demo -->
+
+<pre>
+$('.box').chainFade({
+  <span class="opciones">toThe: 'bottom'</span>
+});
+</pre>
+
+					<p class="btn">&#9658;</p>
+				</div>
+
+			</section>
+
+			<!-- speed: 1000  -->
+			<section>
+
+				<div class="demoContainer">
+					<div class="demo speedLeft clearfix">
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>	
+					</div><!-- fin demo -->
+
+<pre>
+$('.box').chainFade({
+  <span class="opciones">speed: 100,
+  interval: 70,
+  fixedHeight: true</span>
+});
+</pre>
+
+					<p class="btn">&#9658;</p>
+
+				</div>
+
+			</section>
+
+			<!-- speed: 1000  -->
+			<section>
+
+				<div class="demoContainer">
+					<div class="demo intervalDistance clearfix">
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>
+						<span class="box"></span>	
+					</div><!-- fin demo -->
+
+<pre>
+$('.box').chainFade({
+  <span class="opciones">interval: 1500, 
+  distance: 2000</span>
+});
+</pre>
+
+					<p class="btn">&#9658;</p>
+
+				</div>
+
+			</section>
+
+		</div><!-- fin listadoOpciones -->
+
+	</div><!-- fin inner -->
+
+	<!-- Footer -->
+	<footer>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, vitae.</p>
+	</footer>
+
+</div><!-- fin wrapper -->
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$('section').chainFade({
+			speed: 500,
+			interval: 50
+		});
+
+		$('.btn', $(this)).click(function(){
+			var op_startAt = 0,
+	        op_interval = 300,
+	        op_speed = 700,
+	        op_fx = 'fade',
+	        op_distance = 50,
+	        op_direction = 'forward',
+	        op_toThe = 'top',
+	        op_fixedHeight = false,        
+	        op_messages = true,
+	        op,
+	        cont = $(this).parent(),
+	        opciones = $(this).siblings('pre').find('span.opciones').text(),
+	        opciones_arr = opciones.split(',');
+
+			for(var i = 0; i < opciones_arr.length; i++){
+				op = opciones_arr[i].split(':');
+				if(op[0].trim() === 'startAt'){op_startAt = parseInt(op[1].trim());}
+        if(op[0].trim() === 'interval'){op_interval = parseInt(op[1].trim());}
+        if(op[0].trim() === 'speed'){op_speed = parseInt(op[1].trim());}
+        if(op[0].trim() === 'fx'){op_fx = op[1].trim();}
+        if(op[0].trim() === 'distance'){op_distance = parseInt(op[1].trim());}
+        if(op[0].trim() === 'direction'){op_direction = op[1].trim();}
+        if(op[0].trim() === 'toThe'){op_toThe = op[1].trim().replace(/["']/g, "");}
+        if(op[0].trim() === 'fixedHeight'){
+        	if(op[1].trim() === 'true'){
+        		op_fixedHeight = true;
+        	} else {
+        		op_fixedHeight = false;
+        	}
+        }
+        if(op[0].trim() === 'messages'){
+        	if(op[1].trim() === 'true'){
+        		op_messages = true;
+        	} else {
+        		op_messages = false;
+        	}
+        }
+			}
+			
+			cont.find('.box').chainFade({
+				startAt: op_startAt,
+				interval: op_interval,
+				speed: op_speed,
+				fx: op_fx,
+				distance: op_distance,
+				direction: op_direction,
+				toThe: op_toThe,
+				fixedHeight: op_fixedHeight,        
+				messages: op_messages
+			});
+
+		});
+	});
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
