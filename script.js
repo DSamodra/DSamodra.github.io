@@ -3,7 +3,7 @@ function youtubechannel() {
     $(".video-list").html("");
     var channelID;
     
-    $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDXISy-tdXM_rOgot-0SblAiYgf2vGXaRY&q=' + $('.search').val() + '', function (ytchan) {
+    $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyA0WgfIfCkf5jH29PTupCkBi6lw8XnZySI&q=' + $('.search').val() + '', function (ytchan) {
         channelID = ytchan.items[0].id.channelId;
         
         $('.account').append(`
@@ -18,7 +18,7 @@ function youtubechannel() {
             </div>
         </div>
         `);
-        $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=' + channelID + '&order=date&key=AIzaSyDXISy-tdXM_rOgot-0SblAiYgf2vGXaRY&maxResults=4', function (videos) {
+        $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=' + channelID + '&order=date&key=AIzaSyA0WgfIfCkf5jH29PTupCkBi6lw8XnZySI&maxResults=4', function (videos) {
             var lastest = videos.items;
             $('.video-list').append(`
                 <div class="col text-bold animate__animated animate__fadeIn">
