@@ -4,7 +4,7 @@ function youtubechannel() {
     var channelID;
     
     $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyA0WgfIfCkf5jH29PTupCkBi6lw8XnZySI&q=' + $('.search').val() + '', function (ytchan) {
-        channelID = ytchan.items[0].id.channelId;
+        channelID = ytchan.items[0].snippet.channelId;
         
         $('.account').append(`
         <div class="animate__animated animate__fadeIn" style="width: 15rem; ">
