@@ -13,67 +13,126 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="rotate.css" />
 
-    <title>Good day Sir!!!</title>
+    <title>Hello Fellas!</title>
 
     <style>
-
-
         body {
             background-color: #e2e2e2;
+        }
+
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -250px 0 0 -50px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 13px solid grey;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
         }
     </style>
 </head>
 
 <body style="background-image: url('aset/city.jpg');">
     <!-- Image and text -->
-    
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="aset/logorhine.png" width="58" height="30" class="d-inline-block align-top" alt=""
-                    loading="lazy">
-            </a>
-            <a class="navbar-brand" href="#">SIMP API</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-           
-            </div>
-
+    <nav class="navbar navbar-expand-sm navbar-light mt-2">
+        <div class="container-md">
+            <a class="navbar-brand d-none d-md-block" href="#">SHRIMP</a>
             <div class="input-group">
                 <input type="text" class="form-control search" placeholder="Search Channel Name"
                     aria-label="Search Channel Name" aria-describedby="button-addon2" id="searc">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary sb-button" type="button" id="sb-button"><i
-                            class="fa fa-search" aria-hidden="true"></i></button>
+                    <button class="btn btn-outline-secondary sb-button" type="button" id="sb-button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row no-gutters" style="margin-top:25px">
-            <div class="col-sm-6 col-md-4">
-                <div class="container">
-                    <div class="account">
-                        
+    <div class="container-xl mt-4">
+        <!-- loading display -->
+        <div id="loader" style="display:none"></div>
+
+        <div id="main-konten">
+            <div class="row no-gutters" style="margin-top:25px">
+                <div class="col-sm-6 col-md-4">
+                    <div class="container-xl">
+                        <div class="account">
+                            <!-- channel description -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 col-md-8">
-                <div class="container">
-                    <div class="row row-cols-1 video-list">
-                        <div class="container" style="margin-top: 10%;">
+                <div class="col-6 col-md-8">
+                    <div class="container-xl">
+                        <div class="row row-cols-1 video-list">
+                            <div class="container-xl" style="margin-top: 10%;">
                                 <i class="fa fa-heart fa-2x animation-target" aria-hidden="true"></i>
                                 <h5 style="margin-top: 20px;">Made By Love</h5>
                                 <p style="margin-top: 20px;">Those who want's learn Rest-API Website</p>
                                 <p style="margin-top: 20px;">Message From Developer..</p>
-                          </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
