@@ -22,7 +22,7 @@ function youtubechannel() {
 
                 //add title images channel name
                 $('.account').append(`
-                    <div class="col animate__animated animate__fadeIn" style="width: 20rem; ">
+                    <div class="col animate__animated animate__fadeIn container" style="width: 20rem; ">
                         <a href="https://www.youtube.com/channel/`+ channelID + `">
                         <img src="`+ ytchan.items[looping].snippet.thumbnails.high.url + `" class="card-img-top rounded-circle shadow-lg p-2 mb-2 bg-white rounded img-fluid" alt="...">
                         </a>
