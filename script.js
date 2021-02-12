@@ -67,14 +67,16 @@ function youtubechannel() {
                             `);
                             counter++;
                         }
-                        if(counter == 4){
+                        if (counter == 4) {
                             return false;
                         }
                     });
                     $('.box').chainFade();
                 });
                 break;
-            };
+            } else {
+                // if channel not found
+            }
             // end if
         };
     });
@@ -82,7 +84,7 @@ function youtubechannel() {
 };
 
 
-
+// button function
 $('.sb-button').on('click', function () {
     loading();
 });
@@ -100,7 +102,7 @@ function loading() {
     document.getElementById("loader").style.display = "block";
     document.getElementById("main-konten").style.display = "none";
 
-    myVar = setTimeout(showPage, 2000);
+    myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
